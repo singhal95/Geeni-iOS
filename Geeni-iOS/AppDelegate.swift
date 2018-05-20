@@ -17,7 +17,7 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUserNotificationCenterDelegate {
     
     let gregorian = Calendar(identifier: .gregorian)
-
+    
     var window: UIWindow?
     //    let keychain = Keychain(service: "com.wiwen.Geeni-iOS")
     
@@ -45,7 +45,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
             }
         }
         
+        let initialValue = UserDefaults.standard.value(forKey: "initial") as? Int
         
+        if let value = initialValue {
+            if value == 0 {
+                
+                let initialViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "InitialViewController") as! InitialViewController
+                self.window?.backgroundColor = UIColor.white
+                self.window?.rootViewController = initialViewController
+                self.window?.makeKeyAndVisible()
+                
+            } else {
+                let initialViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "Login") as! LoginViewController
+                self.window?.backgroundColor = UIColor.white
+                self.window?.rootViewController = initialViewController
+                self.window?.makeKeyAndVisible()
+            }
+        } else {
+            let initialViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "InitialViewController") as! InitialViewController
+            self.window?.backgroundColor = UIColor.white
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }
         
         return true
     }
@@ -103,7 +124,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
                                                  annotation: annotation)
     }
     
-   
+    
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         if error != nil {
@@ -113,7 +134,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
         
         guard let authentication = user.authentication else { return }
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                          accessToken: authentication.accessToken)
+                                                       accessToken: authentication.accessToken)
         Auth.auth().signIn(with: credential) { (user, error) in
             if error != nil {
                 print("\(String(describing: error?.localizedDescription))")

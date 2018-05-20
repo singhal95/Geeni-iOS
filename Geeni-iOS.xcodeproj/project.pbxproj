@@ -66,6 +66,8 @@
 		5F7AF02C1F900A5600811458 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F7AF02B1F900A5600811458 /* SignUp.storyboard */; };
 		5F7AF02E1F9011C600811458 /* FirebaseCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7AF02D1F9011C600811458 /* FirebaseCalls.swift */; };
 		5F8820381FBB37A900D062BA /* ServerCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8820371FBB37A900D062BA /* ServerCalls.swift */; };
+		5F91863420B2229D00744550 /* InitialCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F91863320B2229D00744550 /* InitialCollectionViewCell.swift */; };
+		5F91863620B222A800744550 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F91863520B222A800744550 /* InitialViewController.swift */; };
 		5FA629931F857C250056B9BB /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA629921F857C250056B9BB /* SettingsTableViewCell.swift */; };
 		5FD17B781F828729000290B0 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD17B771F828729000290B0 /* FeedbackViewController.swift */; };
 		5FD17B7B1F829352000290B0 /* Graphs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FD17B7A1F829352000290B0 /* Graphs.storyboard */; };
@@ -138,6 +140,8 @@
 		5F7AF02B1F900A5600811458 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		5F7AF02D1F9011C600811458 /* FirebaseCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCalls.swift; sourceTree = "<group>"; };
 		5F8820371FBB37A900D062BA /* ServerCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerCalls.swift; sourceTree = "<group>"; };
+		5F91863320B2229D00744550 /* InitialCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialCollectionViewCell.swift; sourceTree = "<group>"; };
+		5F91863520B222A800744550 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		5FA629921F857C250056B9BB /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		5FD17B771F828729000290B0 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		5FD17B7A1F829352000290B0 /* Graphs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Graphs.storyboard; sourceTree = "<group>"; };
@@ -194,6 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				4C682A8C1E90E66900DEA494 /* Login.storyboard */,
+				5F91863320B2229D00744550 /* InitialCollectionViewCell.swift */,
+				5F91863520B222A800744550 /* InitialViewController.swift */,
 				4CF45AF81E7B115F00768999 /* LoginViewController.swift */,
 			);
 			name = Login;
@@ -649,6 +655,7 @@
 				5FD57DE11F7EC1FD00BAE233 /* SettingsTableViewController.swift in Sources */,
 				5F5E10251F87846700A38E09 /* CardListTableViewCell.swift in Sources */,
 				5F73DB041F83B39200E76232 /* PostImageTableViewCell.swift in Sources */,
+				5F91863620B222A800744550 /* InitialViewController.swift in Sources */,
 				4CCD80C31E7E48B9000644B1 /* AddCardViewController.swift in Sources */,
 				4CECE5EB1E9115170019D640 /* TimerViewController.swift in Sources */,
 				4C8F79951E9DDA1000C785C5 /* ProfileTableViewController.swift in Sources */,
@@ -668,6 +675,7 @@
 				4CF45AF91E7B115F00768999 /* LoginViewController.swift in Sources */,
 				5F718F371F8E499F00E0DA7C /* Chatroom.swift in Sources */,
 				5F665F221FA07D4D004FB465 /* ChatroomViewController.swift in Sources */,
+				5F91863420B2229D00744550 /* InitialCollectionViewCell.swift in Sources */,
 				5FD57DD91F7EC12D00BAE233 /* Receipt.swift in Sources */,
 				4CECE5E41E9111EF0019D640 /* CardListTableViewController.swift in Sources */,
 				4CF45AE71E7B0DF000768999 /* AppDelegate.swift in Sources */,
@@ -818,7 +826,7 @@
 				INFOPLIST_FILE = "Geeni-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wiwen.Geeni-iOS-com.wiwen.Geeni-iOS-com.wiwen.Geeni-iOS-com.wiwen.Geeni-iOS-com.wiwen.Geeni-iOS-com.wiwen.Geeni-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wiwen.Geeni-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -837,7 +845,7 @@
 				INFOPLIST_FILE = "Geeni-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wiwen.Geeni-iOS-com.wiwen.Geeni-iOS-com.wiwen.Geeni-iOS-com.wiwen.Geeni-iOS-com.wiwen.Geeni-iOS-com.wiwen.Geeni-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wiwen.Geeni-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
