@@ -226,8 +226,6 @@ class AddCardViewController: UIViewController, UIScrollViewDelegate {
         activityView.startAnimating()
         
         
-        
-        
         if cardNumberTextField.text == "" || cvvTextField.text == "" || dateTextField.text == "" || zipCodeTextField.text == "" {
             showAlert("Text Fields cannot be empty")
             activityView.isHidden = true

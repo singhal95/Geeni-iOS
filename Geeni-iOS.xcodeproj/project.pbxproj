@@ -76,6 +76,7 @@
 		5FD57DDF1F7EC1D200BAE233 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FD57DDE1F7EC1D200BAE233 /* Settings.storyboard */; };
 		5FD57DE11F7EC1FD00BAE233 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD57DE01F7EC1FD00BAE233 /* SettingsTableViewController.swift */; };
 		5FD57DE31F7EC42D00BAE233 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD57DE21F7EC42C00BAE233 /* PostTableViewCell.swift */; };
+		5FDDF50F20B47EBD004633F2 /* SignUpCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDDF50E20B47EBD004633F2 /* SignUpCardTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -150,6 +151,7 @@
 		5FD57DDE1F7EC1D200BAE233 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		5FD57DE01F7EC1FD00BAE233 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		5FD57DE21F7EC42C00BAE233 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		5FDDF50E20B47EBD004633F2 /* SignUpCardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCardTableViewController.swift; sourceTree = "<group>"; };
 		6EBAEB2CA1C7CF6A6EBEA45E /* Pods-Geeni-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Geeni-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Geeni-iOS/Pods-Geeni-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		BFF9E2D3AD97B6DB4D737B3B /* Pods_Geeni_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Geeni_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C728534B69344A2502220C /* Pods-Geeni-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Geeni-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Geeni-iOS/Pods-Geeni-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 			children = (
 				5F7AF02B1F900A5600811458 /* SignUp.storyboard */,
 				5F7AF0291F900A4200811458 /* SignUpTableViewController.swift */,
+				5FDDF50E20B47EBD004633F2 /* SignUpCardTableViewController.swift */,
 			);
 			name = "Sign up";
 			sourceTree = "<group>";
@@ -648,6 +651,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CECE5DB1E9104A90019D640 /* MessagesListTableViewController.swift in Sources */,
+				5FDDF50F20B47EBD004633F2 /* SignUpCardTableViewController.swift in Sources */,
 				5FA629931F857C250056B9BB /* SettingsTableViewCell.swift in Sources */,
 				5F551BCA1F8025A100D25B7A /* NewPostTableViewContoller.swift in Sources */,
 				5FD57DDB1F7EC17500BAE233 /* WalletTableViewCell.swift in Sources */,

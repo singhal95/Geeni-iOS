@@ -21,12 +21,12 @@ class SignUpTableViewController: UITableViewController {
     @IBOutlet weak var saveDetailsButton : UIButton!
     @IBOutlet weak var segmentController : UISegmentedControl!
     
+    
     var imagePickerController = UIImagePickerController()
     var tutor_bool =  false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.allowsSelection = false
         setupNavigationBar(title: "Enter Personal Information")
         setupTextFields()
         setupImageView()
@@ -35,12 +35,17 @@ class SignUpTableViewController: UITableViewController {
         setupSegmentController()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationItem.title = ""
+    }
+    
     func setupSegmentController(){
         segmentController.backgroundColor = colors.whiteColor
         segmentController.tintColor = colors.blueColor
         let font = UIFont.systemFont(ofSize: 16)
         segmentController.setTitleTextAttributes([NSFontAttributeName: font],
-                                                for: .normal)
+                                                 for: .normal)
     }
     
     func setupImageView(){
@@ -103,13 +108,22 @@ class SignUpTableViewController: UITableViewController {
         yearTextField.delegate = self
     }
     
+    func presentCardViewController(){
+        let signUpCardTableViewController = UIStoryboard(name: "SignUp", bundle: nil).instantiateViewController(withIdentifier: "SignUpCardTableViewController") as! SignUpCardTableViewController
+        self.navigationController?.pushViewController(signUpCardTableViewController, animated: true)
+    }
+    
     @IBAction func saveDetailsButtonPressed(){
-        if  nameTextField.text != "" , majorsTextField.text != "" , yearTextField.text != ""  {
+        if nameTextField.text != "" && majorsTextField.text != "" && yearTextField.text != ""  {
             //save user details
             FirebaseCalls().saveUserDetails(name: nameTextField.text!, majors: majorsTextField.text!, year: yearTextField.text!, tutor_bool : tutor_bool, completionHandler: { (bool) in
                 if bool {
                     // After data is saved segue is performed
-                    self.presentMainView()
+                    if self.segmentController.selectedSegmentIndex == 1 {
+                        self.presentMainView()
+                    } else {
+                        self.presentCardViewController()
+                    }
                 }else {
                     self.showAlert("Some unexpected error occured!")
                 }
