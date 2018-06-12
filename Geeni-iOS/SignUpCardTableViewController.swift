@@ -64,6 +64,8 @@ class SignUpCardTableViewController : UITableViewController {
         if cardLabel.text == "" {
             self.showAlert("Please add your Card Details to start using Geeni")
         } else {
+            
+            
             presentMainView()
         }
     }

@@ -30,11 +30,15 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>1.11</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Geeni wants to access your camera to upload media </string>
+	<string>Geeni wants to access your camera to upload media to create new post</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Geeni wants to access your photo library to upload media to create new post</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Geeni wants to access your photo library to upload media to create new post</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

@@ -33,6 +33,16 @@ class SignUpTableViewController: UITableViewController {
         setupSaveDetailsButton()
         imagePickerController.delegate  = self
         setupSegmentController()
+        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewTapped)))        
+        UserDetails.firstLogin = true
+
+    }
+    
+    func viewTapped(){
+        yearTextField.resignFirstResponder()
+        nameTextField.resignFirstResponder()
+        majorsTextField.resignFirstResponder()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -103,6 +113,9 @@ class SignUpTableViewController: UITableViewController {
         nameTextField.borderStyle = .none
         majorsTextField.borderStyle = .none
         yearTextField.borderStyle = .none
+        
+        yearTextField.keyboardType = .numberPad
+        
         nameTextField.delegate = self
         majorsTextField.delegate = self
         yearTextField.delegate = self
@@ -116,6 +129,7 @@ class SignUpTableViewController: UITableViewController {
     @IBAction func saveDetailsButtonPressed(){
         if nameTextField.text != "" && majorsTextField.text != "" && yearTextField.text != ""  {
             //save user details
+            
             FirebaseCalls().saveUserDetails(name: nameTextField.text!, majors: majorsTextField.text!, year: yearTextField.text!, tutor_bool : tutor_bool, completionHandler: { (bool) in
                 if bool {
                     // After data is saved segue is performed

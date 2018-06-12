@@ -19,7 +19,7 @@ class SideMenuTableViewController: UITableViewController {
     @IBOutlet weak var majorLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
-    let sections: [String] = ["NEWS FEED", "NEW POST", "SCHEDULE", "MESSAGES", "WALLET", "PAYMENT OPTIONS", "BECOME A TUTOR","SHARE","LOGOUT"]
+    let sections: [String] = ["NEWS FEED", "NEW POST", "SCHEDULE", "MESSAGES", "WALLET", "PAYMENT OPTIONS","SHARE","LOGOUT"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,25 @@ class SideMenuTableViewController: UITableViewController {
         tableView.separatorColor = UIColor.darkGray
         tableView.tableFooterView = UIView()
         getUserInfo()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        let viewController = self.revealViewController().frontViewController
+        if let identifier = viewController?.restorationIdentifier {
+            if identifier == "NewPost" {
+                let navigationController = viewController as! UINavigationController
+                let postViewController = navigationController.viewControllers.first as! NewPostTableViewContoller
+                
+                //resign responders of textfields and textviews
+                postViewController.courseTextField.resignFirstResponder()
+                postViewController.locationTextField.resignFirstResponder()
+                postViewController.dateTextField.resignFirstResponder()
+                postViewController.durationTextField.resignFirstResponder()
+                postViewController.descriptionTextView.resignFirstResponder()
+            }
+        }
+        
     }
     
     func setupProfileImage(){
@@ -127,7 +146,7 @@ class SideMenuTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 9
+        return 8
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -166,16 +185,16 @@ class SideMenuTableViewController: UITableViewController {
             let cards: UIViewController = UIStoryboard(name: "ListCard", bundle: nil).instantiateViewController(withIdentifier: "ListCard") as! UINavigationController
             self.revealViewController().setFront(cards, animated: true)
             
-        case 6:
-            let becomeTutor: UIViewController = UIStoryboard(name: "BecomeTutor", bundle: nil).instantiateViewController(withIdentifier: "BecomeTutor") as! UINavigationController
-            self.revealViewController().setFront(becomeTutor, animated: true)
+            //        case 6:
+            //            let becomeTutor: UIViewController = UIStoryboard(name: "BecomeTutor", bundle: nil).instantiateViewController(withIdentifier: "BecomeTutor") as! UINavigationController
+            //            self.revealViewController().setFront(becomeTutor, animated: true)
             
-        case 7:
+        case 6:
             let shareLink : String = "Checkout Geeni Mobile App on Apple App Store and Google Play Store"
             let activityViewController = UIActivityViewController(activityItems: [shareLink], applicationActivities: [])
             self.present(activityViewController, animated: true, completion: nil)
-        case 8:
-
+        case 7:
+            
             do {
                 try Auth.auth().signOut()
                 GIDSignIn.sharedInstance().signOut()

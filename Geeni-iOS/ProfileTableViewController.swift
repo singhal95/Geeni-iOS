@@ -15,7 +15,6 @@ class ProfileTableViewController: UITableViewController {
     
     @IBOutlet weak var majorLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var backButton: UIButton!
@@ -34,8 +33,8 @@ class ProfileTableViewController: UITableViewController {
         userImageView.setBorder(color : UIColor.white.cgColor , width : 2)
         
         userImageView.image = UIImage(named:"user_gray")
-        backgroundImageView.image = UIImage(named: "user_gray")
-            
+//        backgroundImageView.image = UIImage(named: "user_gray")
+        
         tableView.allowsSelection = false
         getProfileDetails()
         tableView.tableFooterView = UIView()
@@ -49,6 +48,16 @@ class ProfileTableViewController: UITableViewController {
         } else {
             hideBackButton(false)
         }
+        setupTableViewHeader()
+    }
+    
+    func setupTableViewHeader(){
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+        gradientLayer.colors = [colors.blueColor.cgColor,colors.geeniBlueColor.cgColor,colors.geeniGreenColor.cgColor]
+        gradientLayer.frame = (tableView.tableHeaderView?.bounds)!
+        self.tableView.tableHeaderView?.layer.insertSublayer(gradientLayer, at: 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -167,18 +176,18 @@ class ProfileTableViewController: UITableViewController {
         } else {
             self.hideMessageButton(false)
         }
-        self.majorLabel.text = UserDetails.user?.major
+        self.majorLabel.text = "@" + (UserDetails.user?.major)!
         self.userNameLabel.text = UserDetails.user?.username
         let imageURL = URL(string: (UserDetails.user?.photo_gs!)!)
         if UserDetails.user?.photo_gs?.first == "g"{
             storageRef = storage.reference(forURL: (UserDetails.user?.photo_gs!)!)
             storageRef.downloadURL { (url, error) in
                 self.userImageView.kf.setImage(with: url)
-                self.backgroundImageView.kf.setImage(with: url)
+//                self.backgroundImageView.kf.setImage(with: url)
             }
         } else {
             self.userImageView.kf.setImage(with: imageURL)
-            self.backgroundImageView.kf.setImage(with: imageURL)
+//            self.backgroundImageView.kf.setImage(with: imageURL)
         }
         self.userRating = (UserDetails.user?.overall_ratings_student)!
     }
@@ -196,11 +205,11 @@ class ProfileTableViewController: UITableViewController {
             storageRef = storage.reference(forURL: (postUser?.photo_gs!)!)
             storageRef.downloadURL { (url, error) in
                 self.userImageView.kf.setImage(with: url)
-                self.backgroundImageView.kf.setImage(with: url)
+//                self.backgroundImageView.kf.setImage(with: url)
             }
         } else {
             self.userImageView.kf.setImage(with: imageURL)
-            self.backgroundImageView.kf.setImage(with: imageURL)
+//            self.backgroundImageView.kf.setImage(with: imageURL)
         }
         self.userRating = (postUser?.overall_ratings_student)!
     }

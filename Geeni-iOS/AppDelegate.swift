@@ -183,6 +183,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
         self.window?.rootViewController = initialViewController
         self.window?.makeKeyAndVisible()
     }
-    
-    
 }

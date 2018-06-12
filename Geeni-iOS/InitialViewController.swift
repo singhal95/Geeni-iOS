@@ -10,7 +10,7 @@ import UIKit
 
 class InitialViewController: UIViewController {
     
-    var imageArray : [String] = ["geeni 1", "geeni 2", "geeni 3", "geeni 4"]
+    var imageArray : [String] = ["geeni 1", "geeni 2", "geeni 3", "geeni 4", "geeni 5"]
     
     @IBOutlet weak var collectionView : UICollectionView!
     @IBOutlet weak var pageControl : UIPageControl!
@@ -28,6 +28,8 @@ class InitialViewController: UIViewController {
         collectionViewFlowLayout.itemSize = itemSize
         collectionViewFlowLayout.minimumLineSpacing = spacing
         collectionViewFlowLayout.minimumInteritemSpacing = spacing
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
     }
     
     @IBAction func getStartedButtonPressed(){
@@ -40,7 +42,7 @@ class InitialViewController: UIViewController {
 extension InitialViewController : UICollectionViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let index : Int = Int(scrollView.contentOffset.x/collectionView.frame.width)
-        if index == 3 {
+        if index == 4 {
             getStartedButton.isHidden = false
         } else {
             getStartedButton.isHidden = true
@@ -51,7 +53,7 @@ extension InitialViewController : UICollectionViewDelegate {
 
 extension InitialViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

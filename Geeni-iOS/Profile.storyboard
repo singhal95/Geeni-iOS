@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,10 +21,6 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="puppyBlur" translatesAutoresizingMaskIntoConstraints="NO" id="s1p-gx-Ny7">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
-                                    <color key="backgroundColor" red="0.17254901959999999" green="0.21960784310000001" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </imageView>
                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCs-NC-YGa">
                                     <rect key="frame" x="20" y="20" width="30" height="20"/>
                                     <constraints>
@@ -52,17 +48,11 @@
                                     </constraints>
                                 </imageView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="nJA-K3-hcM">
-                                    <rect key="frame" x="111.66666666666667" y="130" width="190.66666666666663" height="30"/>
+                                    <rect key="frame" x="143" y="130" width="128" height="30"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kathy Kane" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRi-CU-bq6">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EECS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQX-ra-6wU">
-                                            <rect key="frame" x="133" y="0.0" width="57.666666666666657" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -81,9 +71,8 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="s1p-gx-Ny7" firstAttribute="leading" secondItem="frk-hE-nnp" secondAttribute="leading" id="6Rv-ka-QC5"/>
                                 <constraint firstItem="nJA-K3-hcM" firstAttribute="bottom" secondItem="E8x-1w-8cc" secondAttribute="top" constant="5" id="CEd-oh-dAG"/>
                                 <constraint firstItem="kG8-gf-Va1" firstAttribute="top" secondItem="frk-hE-nnp" secondAttribute="top" constant="20" id="D37-6E-uRl"/>
                                 <constraint firstAttribute="trailing" secondItem="kG8-gf-Va1" secondAttribute="trailing" constant="20" id="Jbb-Wz-qg5"/>
@@ -94,9 +83,6 @@
                                 <constraint firstItem="RCs-NC-YGa" firstAttribute="leading" secondItem="frk-hE-nnp" secondAttribute="leading" constant="20" id="Xud-5Y-ZjU"/>
                                 <constraint firstItem="NQo-Fk-6yH" firstAttribute="centerX" secondItem="frk-hE-nnp" secondAttribute="centerX" id="ZPH-kh-Fjs"/>
                                 <constraint firstItem="nJA-K3-hcM" firstAttribute="centerX" secondItem="frk-hE-nnp" secondAttribute="centerX" id="jmQ-oS-ntX"/>
-                                <constraint firstAttribute="trailing" secondItem="s1p-gx-Ny7" secondAttribute="trailing" id="nEG-H7-Nhu"/>
-                                <constraint firstAttribute="bottom" secondItem="s1p-gx-Ny7" secondAttribute="bottom" id="uPi-jS-VoA"/>
-                                <constraint firstItem="s1p-gx-Ny7" firstAttribute="top" secondItem="frk-hE-nnp" secondAttribute="top" id="xTl-xE-Q6U"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -221,7 +207,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="RCs-NC-YGa" id="rXn-ws-rYy"/>
-                        <outlet property="backgroundImageView" destination="s1p-gx-Ny7" id="quQ-lk-aLO"/>
                         <outlet property="majorLabel" destination="E8x-1w-8cc" id="X9u-wq-wNW"/>
                         <outlet property="menuButton" destination="prv-js-Qxv" id="0xa-Ru-N4M"/>
                         <outlet property="messageButton" destination="kG8-gf-Va1" id="mRI-ne-wzR"/>
@@ -257,6 +242,5 @@
         <image name="menu" width="15" height="10"/>
         <image name="message" width="40" height="40"/>
         <image name="puppy" width="1280" height="866"/>
-        <image name="puppyBlur" width="1280" height="866"/>
     </resources>
 </document>

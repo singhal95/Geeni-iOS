@@ -261,6 +261,7 @@
 		4C682A9B1E90E74F00DEA494 /* Reusable Code */ = {
 			isa = PBXGroup;
 			children = (
+				5F551BC51F80170300D25B7A /* Colors.swift */,
 				2CAF613B1E7B229B00876C4D /* Utils.swift */,
 				5F60F7B91F7E52F300233155 /* Extensions.swift */,
 			);
@@ -418,7 +419,6 @@
 				5F1DA5781FA526730023164F /* ProfileTableViewCells */,
 				5F5E10241F87846700A38E09 /* CardListTableViewCell.swift */,
 				5F718F321F8E47DE00E0DA7C /* SessionTableViewCell.swift */,
-				5F551BC51F80170300D25B7A /* Colors.swift */,
 				5F73DB061F8441C300E76232 /* PostImageCollectionViewCell.swift */,
 				5F73DAFE1F83AFC900E76232 /* PostTableViewCells */,
 				4C682A9B1E90E74F00DEA494 /* Reusable Code */,
@@ -501,11 +501,14 @@
 				TargetAttributes = {
 					4CF45AE21E7B0DF000768999 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 7Q7M69XNR3;
+						DevelopmentTeam = UE72JTA7FC;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 0;
 							};
 						};
 					};
@@ -826,11 +829,11 @@
 				CODE_SIGN_ENTITLEMENTS = "Geeni-iOS/Geeni-iOS.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7Q7M69XNR3;
+				DEVELOPMENT_TEAM = UE72JTA7FC;
 				INFOPLIST_FILE = "Geeni-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wiwen.Geeni-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.geeni.wiwen.Geeni-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -845,11 +848,11 @@
 				CODE_SIGN_ENTITLEMENTS = "Geeni-iOS/Geeni-iOS.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7Q7M69XNR3;
+				DEVELOPMENT_TEAM = UE72JTA7FC;
 				INFOPLIST_FILE = "Geeni-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.wiwen.Geeni-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.geeni.wiwen.Geeni-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;

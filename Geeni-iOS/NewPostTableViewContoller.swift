@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import AVFoundation
+import SWRevealViewController
 
 class NewPostTableViewContoller: UITableViewController {
     
@@ -37,7 +38,7 @@ class NewPostTableViewContoller: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar(title: "New Post")
-        revealSideMenu(menuButton)
+        revealSideMenuPost(menuButton)
         setupSubmitButton()
         tableView.tableFooterView = UIView()
         setupTextFields()
@@ -46,6 +47,15 @@ class NewPostTableViewContoller: UITableViewController {
         setupDatePicker()
         setupPostImageColelctionView()
         setupActivityIndicatorView()
+    }
+    
+    func revealSideMenuPost(_ menuButton : UIBarButtonItem) {
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            
+        }
     }
     
     func setupSubmitButton() {
@@ -65,6 +75,16 @@ class NewPostTableViewContoller: UITableViewController {
             }
             UserDetails.selectedCard = nil
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        //resign text field 
+        super.viewWillDisappear(animated)
+        self.courseTextField.resignFirstResponder()
+        self.locationTextField.resignFirstResponder()
+        self.dateTextField.resignFirstResponder()
+        self.durationTextField.resignFirstResponder()
+        self.descriptionTextView.resignFirstResponder()
     }
     
     func setupActivityIndicatorView(){
@@ -206,7 +226,7 @@ class NewPostTableViewContoller: UITableViewController {
         self.courseDict["desc"] = courseDescription as AnyObject
         self.courseDict["location"] = courseLocation as AnyObject
         self.courseDict["start_time"] =  selectedDate.timeIntervalSince1970 * 1000 as AnyObject
-        self.courseDict["duration"] = (courseDuration! as NSString).floatValue * 60 * 60 * 1000 as AnyObject
+        self.courseDict["duration"] = (courseDuration! as NSString).floatValue * 60 * 1000 as AnyObject
         self.courseDict["timestamp"] = timeStamp as AnyObject
         self.courseDict["username"] = UserDetails.user?.username as AnyObject
         self.courseDict["user_photo_gs"] = UserDetails.user?.photo_gs as AnyObject

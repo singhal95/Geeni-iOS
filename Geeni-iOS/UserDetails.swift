@@ -17,4 +17,6 @@ struct UserDetails {
     static var tutorSessions : [Session] = []
     static var selectedCard : Card? = nil
     static var retryCard : Card? = nil
+    
+    static var firstLogin : Bool = false
 }

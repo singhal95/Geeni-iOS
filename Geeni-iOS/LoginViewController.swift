@@ -62,12 +62,12 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate{
     }
     
     func presentMainView() {
-        if UserDetails.user != nil {
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-        let storyboard: UIStoryboard = UIStoryboard(name: "SideMenu", bundle: nil)
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "MainPage") as! SWRevealViewController
-        delegate.window?.rootViewController = initialViewController
-        delegate.window?.makeKeyAndVisible()
+        if !UserDetails.firstLogin {
+            let delegate = UIApplication.shared.delegate as! AppDelegate
+            let storyboard: UIStoryboard = UIStoryboard(name: "SideMenu", bundle: nil)
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "MainPage") as! SWRevealViewController
+            delegate.window?.rootViewController = initialViewController
+            delegate.window?.makeKeyAndVisible()
         }
     }
     

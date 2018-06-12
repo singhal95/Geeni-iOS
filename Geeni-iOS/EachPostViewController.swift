@@ -45,13 +45,11 @@ class EachPostViewController : UIViewController {
         if currentPost?.user_photo_gs!.first != "g" {
             // if the photo is saved in firebase storage
             profileImageView?.userImage.kf.setImage(with: userImageUrl)
-            profileImageView?.backgroundImage.kf.setImage(with: userImageUrl)
         } else {
             // if there is a direct link
             storageRef = storage.reference(forURL: (currentPost?.user_photo_gs!)!)
             storageRef.downloadURL { (url, error) in
                 profileImageView?.userImage.kf.setImage(with: url)
-                profileImageView?.backgroundImage.kf.setImage(with: url)
                 profileImageView?.messageButton.addTarget(self, action: #selector(self.messageButtonPressed), for: .touchUpInside)
             }
         }
